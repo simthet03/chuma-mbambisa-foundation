@@ -1,0 +1,99 @@
+// 4.5 Contact Block
+.sliderNav {
+  $self: &;
+  &__btn {
+    width: 63px;
+    height: 54px;
+    display: grid;
+    place-content: center;
+    @include transitionSmooth;
+  }
+  &--style1 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    #{$self}__btn {
+      &.btn-prev {
+        background: $colorTitle;
+        &:hover {
+          background: #7DD0C4;  // Light aqua hover for prev button
+        }
+      }
+      &.btn-next {
+        background: #3A89A0;  // Changed from $colorPrimary to teal blue
+        &:hover {
+          background: #7DD0C4;  // Light aqua hover for next button
+        }
+      }
+    }
+    @include respond-below(sm) {
+      justify-content: flex-start;
+    }
+  }
+  &--style2 {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 120px;
+    @include respond-below(md) {
+      top: 20%;
+      transform: translateY(0%);
+      padding: 0 50px;
+    }
+    #{$self}__btn {
+      border: 1px solid #7DD0C4;  // Changed from $grayColor5 to light aqua
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      svg {
+        path {
+          fill: $colorTitle;
+        }
+      }
+      &:hover {
+        background-color: #3A89A0;  // Changed from $colorPrimary to teal blue
+        color: $colorWhite;
+        border-color: #3A89A0;  // Changed to teal blue
+        svg {
+          path {
+            fill: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+ }
+ 
+ .testi-slider-active2 {
+  padding-top: 165px;
+ }
+ 
+ // Slider Pagination
+ .it-pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+ 
+  .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+    border: 1px solid #7DD0C4;  // Changed from #c9c9c9 to light aqua
+    opacity: 1;
+    @include transitionSmooth;
+ 
+    &.swiper-pagination-bullet-active {
+      background-color: #3A89A0;  // Changed from $colorPrimary to teal blue
+      border-color: #3A89A0;  // Changed to teal blue
+      @include transitionSmooth;
+    }
+    
+    &:hover {
+      background-color: #7DD0C4;  // Added light aqua hover state
+      border-color: #7DD0C4;
+    }
+  }
+ }
