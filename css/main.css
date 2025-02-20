@@ -5187,6 +5187,8 @@ img.map-about-tab {
 
 .sponsorsItem {
   text-align: center;
+  margin: 0 15px;
+  padding: 20px;
   /* filter: grascale(1); */
 }
 
