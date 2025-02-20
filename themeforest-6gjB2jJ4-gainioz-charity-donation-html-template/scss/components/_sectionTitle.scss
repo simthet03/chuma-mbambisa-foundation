@@ -1,0 +1,34 @@
+// 4.4 Section Title
+.sectionTitle {
+  &__small {
+    color: #3A89A0;  // Changed from orange (#eb9309) to teal blue
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 18px;
+    i {
+      animation: scale-up-one 2s linear infinite;
+      color: #7DD0C4;  // Added light aqua color to the icon
+    }
+  }
+  &__big {
+    line-height: 1.19;
+    text-transform: uppercase;
+    position: relative;
+    
+    // Optional: You could add an underline effect using the light aqua color
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background-color: #7DD0C4;  // Added light aqua underline
+    }
+  }
+}
