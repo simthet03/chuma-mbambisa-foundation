@@ -2021,6 +2021,8 @@ html {
   gap: 35px;
 }
 
+
+
 @media (max-width: 1199px) {
   .mainMenu > ul {
     gap: 15px;
