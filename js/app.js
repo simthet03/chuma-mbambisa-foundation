@@ -529,35 +529,34 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
     
     function loadImages() {
-        const fragment = document.createDocumentFragment();
+      const fragment = document.createDocumentFragment();
+      
+      for(let i = 0; i < imagesPerLoad && currentIndex < galleryImages.length; i++) {
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
         
-        for(let i = 0; i < imagesPerLoad && currentIndex < galleryImages.length; i++) {
-          const div = document.createElement('div');
-          div.className = 'gallery-item';
-          
-          const link = document.createElement('a');
-          link.href = galleryImages[currentIndex];
-          link.setAttribute('data-lightbox', 'gallery');
-          
-          const img = document.createElement('img');
-          // Just use the original image path instead of looking for thumbnails
-          img.src = galleryImages[currentIndex];
-          img.alt = 'Gallery image ' + (currentIndex + 1);
-          img.loading = 'lazy';
-          
-          link.appendChild(img);
-          div.appendChild(link);
-          fragment.appendChild(div);
-          
-          currentIndex++;
-        }
+        const link = document.createElement('a');
+        link.href = galleryImages[currentIndex];
+        link.setAttribute('data-lightbox', 'gallery');
         
-        galleryGrid.appendChild(fragment);
+        const img = document.createElement('img');
+        img.src = galleryImages[currentIndex].replace('gallery/', 'gallery/thumbnails/').replace('.jpg', '-thumbnail.jpg');
+        img.alt = 'Gallery image ' + (currentIndex + 1);
+        img.loading = 'lazy';
         
-        if(currentIndex >= galleryImages.length) {
-          loadMoreBtn.style.display = 'none';
-        }
+        link.appendChild(img);
+        div.appendChild(link);
+        fragment.appendChild(div);
+        
+        currentIndex++;
       }
+      
+      galleryGrid.appendChild(fragment);
+      
+      if(currentIndex >= galleryImages.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    }
     
     loadMoreBtn.addEventListener('click', loadImages);
     
