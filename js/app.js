@@ -508,5 +508,63 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  //22. Gallery For Golf Day
+  document.addEventListener('DOMContentLoaded', function() {
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const loadMoreBtn = document.getElementById('load-more');
+    let currentIndex = 0;
+    const imagesPerLoad = 12;
+    
+    const galleryImages = [
+      'image/gallery/img1.jpg',
+      'image/gallery/img2.jpg',
+      'image/gallery/img3.jpg',
+      'image/gallery/img4.jpg',
+      'image/gallery/img5.jpg',
+      'image/gallery/img6.jpg',
+      'image/gallery/img7.jpg',
+      'image/gallery/img8.jpg',
+      'image/gallery/img9.jpg',
+      'image/gallery/img10.jpg',
+    ];
+    
+    function loadImages() {
+        const fragment = document.createDocumentFragment();
+        
+        for(let i = 0; i < imagesPerLoad && currentIndex < galleryImages.length; i++) {
+          const div = document.createElement('div');
+          div.className = 'gallery-item';
+          
+          const link = document.createElement('a');
+          link.href = galleryImages[currentIndex];
+          link.setAttribute('data-lightbox', 'gallery');
+          
+          const img = document.createElement('img');
+          // Just use the original image path instead of looking for thumbnails
+          img.src = galleryImages[currentIndex];
+          img.alt = 'Gallery image ' + (currentIndex + 1);
+          img.loading = 'lazy';
+          
+          link.appendChild(img);
+          div.appendChild(link);
+          fragment.appendChild(div);
+          
+          currentIndex++;
+        }
+        
+        galleryGrid.appendChild(fragment);
+        
+        if(currentIndex >= galleryImages.length) {
+          loadMoreBtn.style.display = 'none';
+        }
+      }
+    
+    loadMoreBtn.addEventListener('click', loadImages);
+    
+    // Load initial set of images
+    loadImages();
+  });
+
+
     // End Activation
 })();
