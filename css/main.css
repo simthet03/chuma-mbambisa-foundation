@@ -7486,7 +7486,7 @@ footer {
 
 /* New CSS for the Event Section */
 .event-container {
-  background: linear-gradient(rgba(40, 39, 39, 0.5), rgba(0, 0, 0, 0.5)), url('/image/events/golf-course.jpg');
+  background: linear-gradient(rgba(40, 39, 39, 0.5), rgba(0, 0, 0, 0.5)), url('/image/events/golf-course-hero-photo.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
