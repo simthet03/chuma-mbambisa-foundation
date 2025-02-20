@@ -5162,6 +5162,7 @@ img.map-about-tab {
   font-weight: 600;
   font-family: "Barlow", sans-serif;
   margin-bottom: 0;
+  color: #FFFFFF;
 }
 
 .sponsorsTitle__line {
@@ -7770,6 +7771,31 @@ body {
 
 .text-center {
   text-align: center !important;
+}
+
+.sponsors {
+  background: url('/image/man/african-business-male-people-shaking-hands_1303-18516.avif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Optional overlay to ensure text remains readable */
+.sponsors::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+/* Ensure content appears above the overlay */
+.sponsors .container {
+  position: relative;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=maps/main.css.map */
