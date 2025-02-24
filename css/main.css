@@ -5821,7 +5821,7 @@ img.map-about-tab {
 }
 
 .pageBreadcumb--style1::before, .pageBreadcumb--style1::after {
-  background: rgba(13, 13, 13, 0.45);
+  background: rgba(13, 13, 13, 0);
 }
 
 .pageTitle {
