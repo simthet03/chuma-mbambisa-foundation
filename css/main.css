@@ -2622,7 +2622,7 @@ html {
 }
 
 .hero__title--big {
-  font-size: calc(1.75rem + 6vw);
+  font-size: calc(1.25rem + 4vw);
   text-transform: uppercase;
   line-height: 1.1;
   margin-bottom: 31px;
@@ -2630,7 +2630,7 @@ html {
 
 @media (min-width: 1200px) {
   .hero__title--big {
-    font-size: 6.25rem;
+    font-size: 4.25rem;
   }
 }
 
@@ -7501,7 +7501,7 @@ footer {
   padding: 40px 20px;
   justify-content: center;
   padding: 60px 20px;
-  margin-top: 220px;
+  margin-top: 180px;
   align-items: center;
   align-content: center;
 }
