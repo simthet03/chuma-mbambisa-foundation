@@ -2630,7 +2630,7 @@ html {
 
 @media (min-width: 1200px) {
   .hero__title--big {
-    font-size: 4.25rem;
+    font-size: 4.55rem;
   }
 }
 
@@ -7831,6 +7831,40 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#rotating-title, #rotating-text {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.title-container {
+  height: 80px; /* Adjust based on your largest title */
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+.text-container {
+  height: 100px; /* Adjust based on your largest text block */
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+#rotating-title, #rotating-text {
+  width: 100%;
+  text-align: left;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Optional: If you want text to scroll within the container when it's too large */
+.text-container .hero__text {
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=maps/main.css.map */

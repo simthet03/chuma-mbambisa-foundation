@@ -564,6 +564,62 @@ document.addEventListener("DOMContentLoaded", function() {
     loadImages();
   });
 
+  //23. Load hero text and title
+  document.addEventListener('DOMContentLoaded', function() {
+    const contentPairs = [
+        {
+            title:"Connections That Matter      ",
+            text: "Empower us to bring values home through training and mentorship, combating fatherlessness with a dedicated network. We want to empower families one at a time."
+        },
+        {
+            title:"Quality Mentorship",
+            text:"A mentor is a trusted guide who supports the mentee's academic and professional growth. A mentor embodies the qualities and achievements our youth aspire to develop in themselves."
+        },
+        {
+            title: "Leadership & Development",
+            text: "Connecting individuals with organizations that provide specialized coaching and mentoring in skills development, career advancement, essential life skills, and emotional well-being."
+        },
+        {
+            title: "The World Needs a Father",
+            text: "Our organization is dedicated to bringing positive values into every home worldwide through comprehensive training, personalized mentoring, and strategic networking."
+        },
+        {
+            title: "Friends Of Chuma Golf Day",
+            text: "This annual golf day, hosted by the Foundation, serves as both a vital fundraising event and an opportunity to share progress updates with our community."
+        }
+    ];
+
+    const rotatingTitle = document.getElementById('rotating-title');
+    const rotatingText = document.getElementById('rotating-text');
+    let currentIndex = 0;
+
+    function rotateContent() {
+        //Fade out
+        rotatingTitle.style.opacity = 0;
+        rotatingText.style.opacity = 0;
+    
+    setTimeout(function() {
+
+        currentIndex = (currentIndex + 1) % contentPairs.length;
+        rotatingTitle.textContent = contentPairs[currentIndex].title;
+        rotatingText.textContent = contentPairs[currentIndex].text;
+
+        // Fade in
+        rotatingTitle.style.opacity = 1;
+        rotatingText.style.opacity = 1;
+    }, 1000);
+    }
+
+    rotatingTitle.style.transition = "opacity 1s ease-in-out";
+    rotatingTitle.style.opacity = 1;
+    rotatingText.style.transition = "opacity 1s ease-in-out";
+    rotatingText.style.opacity = 1;
+    
+    // Start rotation every 8 seconds (8000ms)
+    setInterval(rotateContent, 8000);
+
+  })
+
 
     // End Activation
 })();
