@@ -2600,7 +2600,9 @@ html {
 }
 
 .hero__content {
+  max-width: 100%;
   padding-left: 66px;
+  position: relative;
 }
 
 @media (max-width: 767px) {
@@ -2830,6 +2832,8 @@ html {
 }
 
 .hero--style5 {
+  min-height: 900px;
+  max-height: 900px;
   padding-top: 267px;
   padding-bottom: 135px;
   position: relative;
@@ -6874,6 +6878,7 @@ img.map-about-tab {
   gap: 8px;
   border: 0;
   box-shadow: none;
+  position: absolute;
 }
 
 .btn--styleOne:hover {
