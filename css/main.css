@@ -3491,7 +3491,7 @@ img.map-about-tab {
   width: 100%;
 }
 
-.featureBlock__hashLink {
+/* .featureBlock__hashLink {
   position: absolute;
   left: 0;
   font-size: 12px;
@@ -3504,7 +3504,7 @@ img.map-about-tab {
   background-repeat: no-repeat;
   padding: 9px 11px;
   top: 0;
-}
+} */
 
 .featureBlock__content {
   padding: 0 15px 5px 15px;
@@ -3643,7 +3643,7 @@ img.map-about-tab {
 }
 
 .featureBlock:hover .featureBlock__hashLink, .featureBlock--active .featureBlock__hashLink {
-  background-image: url(../image/shapes/featuredCateShape2.png);
+  background-image: url(../image/shapes/featuredCateShap1.png);
   color: #fff;
 }
 

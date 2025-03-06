@@ -620,6 +620,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
   })
 
+// 24. Generate random numbers and set the captcha question
+  // Generate random numbers and set the captcha question
+  function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 10);
+    const question = `What is ${num1} + ${num2}?`;
+    document.getElementById('captcha-question').innerText = question;
+    return num1 + num2;
+  }
+
+  // Store the correct answer
+  let correctAnswer = generateCaptcha();
+
+  // Add an event listener to the captcha answer input
+  document.getElementById('captcha-answer').addEventListener('input', function() {
+    const userAnswer = parseInt(this.value);
+    const submitButton = document.getElementById('submit-button');
+    if (userAnswer === correctAnswer) {
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
+    }
+  });
+
+  // Validate the captcha on form submission
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+    if (userAnswer !== correctAnswer) {
+      alert('Please answer the captcha correctly to submit the form.');
+      event.preventDefault();
+    }
+  });
+
 
     // End Activation
 })();

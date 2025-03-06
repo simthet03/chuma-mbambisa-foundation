@@ -1,6 +1,6 @@
 <?php
 
-$EmailTo = "shilonmahadi7@gmail.com";
+$EmailTo = "info@chumambambisalegacyfoundation.org";
 $Subject = "New Message Received";
 
 $errorMSG = "";

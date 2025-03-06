@@ -400,7 +400,7 @@
             </div>
             <div class="col-md-6">
               <div class="commentsPost__input">
-                <input name="phone" type="text" placeholder="Enter your  number*">
+                <input name="phone" type="text" placeholder="Enter your number*">
               </div>
             </div>
             <div class="col-md-6">
@@ -410,47 +410,43 @@
             </div>
             <div class="col-12">
               <div class="commentsPost__input">
-                <textarea name="message" placeholder="Enter your Massage*"></textarea>
+                <textarea name="message" placeholder="Enter your Message*"></textarea>
               </div>
             </div>
             <div class="col-12">
               <div class="commentsPost__check">
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Save my name, email, and website in this
-                    browser for the next time I comment.</label>
+                <div class="form-group form-check"></div>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Save my name, email, and website in this browser for the next time I comment.</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="commentsPost__input">
+                <div id="captcha-container">
+                  <span id="captcha-question"></span>
+                  <input type="text" id="captcha-answer" placeholder="Enter your answer*">
                 </div>
               </div>
             </div>
             <div class="col-12">
               <div class="commentsPost__button text-center">
                 <button type="submit" class="btn btn--styleOne btn--primary it-btn">
-                  <span class="btn__text">Send massage</span>
+                  <span class="btn__text">Send message</span>
                   <i class="fa-solid fa-heart btn__icon"></i>
                   <span class="it-btn__inner">
-                  <span class="it-btn__blobs">
+                    <span class="it-btn__blobs"></span>
                     <span class="it-btn__blob"></span>
-                  <span class="it-btn__blob"></span>
-                  <span class="it-btn__blob"></span>
-                  <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
                   </span>
-                  </span>
-                  <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                      <filter>
-                        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
-                        </feColorMatrix>
-                        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-                      </filter>
-                    </defs>
-                  </svg>
                 </button>
               </div>
             </div>
           </div>
           <div class="form-response"></div>
         </form>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </div>
     </div>
     <!-- Contact End -->
@@ -547,7 +543,7 @@
                   </div>
                 </div>
                 <div class="col-lg-5 mb-30">
-                  <form action="#" method="post" class="footer__newsletter">
+                  <!-- <form action="#" method="post" class="footer__newsletter">
                     <div class="footer__title">
                       <h2 class="footer__heading text-uppercase text-black">News Letter</h2>
                     </div>
@@ -561,7 +557,7 @@
                         being
                         collected and stored.</label>
                     </div>
-                  </form>
+                  </form> -->
                 </div>
               </div>
             </div>
