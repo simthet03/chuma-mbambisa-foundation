@@ -526,6 +526,7 @@ document.addEventListener("DOMContentLoaded", function() {
       'image/gallery/img8.jpg',
       'image/gallery/img9.jpg',
       'image/gallery/img10.jpg',
+      'image/gallery/img11.jpg',
     ];
     
     function loadImages() {
