@@ -524,6 +524,8 @@ document.addEventListener("DOMContentLoaded", function() {
       'image/gallery/img16.jpg',
       'image/gallery/img17.jpg',
       'image/gallery/img18.jpg',
+      'image/gallery/img19.jpg',
+      'image/gallery/img20.jpg',
       'image/gallery/img21.jpg',
       'image/gallery/img22.jpg',
       'image/gallery/img23.jpg',
