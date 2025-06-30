@@ -516,17 +516,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const imagesPerLoad = 12;
     
     const galleryImages = [
-      'image/gallery/img1.jpg',
-      'image/gallery/img2.jpg',
-      'image/gallery/img3.jpg',
-      'image/gallery/img4.jpg',
-      'image/gallery/img5.jpg',
-      'image/gallery/img6.jpg',
-      'image/gallery/img7.jpg',
-      'image/gallery/img8.jpg',
-      'image/gallery/img9.jpg',
-      'image/gallery/img10.jpg',
       'image/gallery/img11.jpg',
+      'image/gallery/img12.jpg',
+      'image/gallery/img13.jpg',
+      'image/gallery/img14.jpg',
+      'image/gallery/img15.jpg',
+      'image/gallery/img16.jpg',
+      'image/gallery/img17.jpg',
+      'image/gallery/img18.jpg',
+      'image/gallery/img21.jpg',
+      'image/gallery/img22.jpg',
+      'image/gallery/img23.jpg',
+      'image/gallery/img24.jpg',
+      'image/gallery/img25.jpg',
+
     ];
     
     function loadImages() {
