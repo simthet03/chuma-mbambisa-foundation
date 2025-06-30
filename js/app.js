@@ -534,35 +534,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ];
     
-    function loadImages() {
-      const fragment = document.createDocumentFragment();
-      
-      for(let i = 0; i < imagesPerLoad && currentIndex < galleryImages.length; i++) {
-        const div = document.createElement('div');
-        div.className = 'gallery-item';
-        
-        const link = document.createElement('a');
-        link.href = galleryImages[currentIndex];
-        link.setAttribute('data-lightbox', 'gallery');
-        
-        const img = document.createElement('img');
-        img.src = galleryImages[currentIndex].replace('gallery/', 'gallery/thumbnails/').replace('.jpg', '-thumbnail.jpg');
-        img.alt = 'Gallery image ' + (currentIndex + 1);
-        img.loading = 'lazy';
-        
-        link.appendChild(img);
-        div.appendChild(link);
-        fragment.appendChild(div);
-        
-        currentIndex++;
-      }
-      
-      galleryGrid.appendChild(fragment);
-      
-      if(currentIndex >= galleryImages.length) {
-        loadMoreBtn.style.display = 'none';
-      }
-    }
+function loadImages() {
+  const fragment = document.createDocumentFragment();
+  
+  for(let i = 0; i < imagesPerLoad && currentIndex < galleryImages.length; i++) {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    
+    const link = document.createElement('a');
+    link.href = galleryImages[currentIndex];
+    link.setAttribute('data-lightbox', 'gallery');
+    
+    const img = document.createElement('img');
+    // Extract the actual image number from the filename instead of using array index
+    const imagePath = galleryImages[currentIndex];
+    const thumbnailPath = imagePath.replace('gallery/', 'gallery/thumbnails/').replace('.jpg', '-thumbnail.jpg');
+    
+    img.src = thumbnailPath;
+    img.alt = 'Gallery image ' + (currentIndex + 1);
+    img.loading = 'lazy';
+    
+    link.appendChild(img);
+    div.appendChild(link);
+    fragment.appendChild(div);
+    
+    currentIndex++;
+  }
+  
+  galleryGrid.appendChild(fragment);
+  
+  if(currentIndex >= galleryImages.length) {
+    loadMoreBtn.style.display = 'none';
+  }
+}
     
     loadMoreBtn.addEventListener('click', loadImages);
     
