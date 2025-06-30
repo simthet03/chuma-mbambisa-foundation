@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("seconds")) {
       
       // Set the date we're counting down to (November 22, 2024 at 11:22)
-      const countdownDate = new Date("April 22, 2025 12:00:00").getTime();
+      const countdownDate = new Date("September 19, 2025 12:00:00").getTime();
       
       // Update the countdown every 1 second
       const countdownTimer = setInterval(function() {
