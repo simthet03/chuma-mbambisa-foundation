@@ -471,42 +471,67 @@ console.log("App.js loaded successfully!");
     // Countdown Timer for Golf Event
 document.addEventListener("DOMContentLoaded", function() {
     // Check if countdown elements exist before initializing
-    if (document.getElementById("hours") && 
-        document.getElementById("minutes") && 
-        document.getElementById("seconds")) {
-      
-      // Set the date we're counting down to (November 22, 2024 at 11:22)
-      const countdownDate = new Date("November 19, 2025 12:00:00").getTime();
-      
-      // Update the countdown every 1 second
-      const countdownTimer = setInterval(function() {
-        // Get current date and time
-        const now = new Date().getTime();
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+    
+    if (hoursElement && minutesElement && secondsElement) {
+        console.log("Countdown elements found, initializing timer...");
         
-        // Find the time remaining between now and the countdown date
-        const timeRemaining = countdownDate - now;
+        // Set the date we're counting down to (November 19, 2025 at 12:00)
+        const countdownDate = new Date("November 19, 2025 12:00:00").getTime();
+        console.log("Target date:", new Date(countdownDate));
         
-        // Time calculations for days, hours, minutes and seconds
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-        
-        // Display the results
-        document.getElementById("hours").textContent = hours + days * 24; // Convert days to hours for simplicity
-        document.getElementById("minutes").textContent = minutes;
-        document.getElementById("seconds").textContent = seconds;
-        
-        // If the countdown is finished, display zeros
-        if (timeRemaining < 0) {
-          clearInterval(countdownTimer);
-          document.getElementById("hours").textContent = "0";
-          document.getElementById("minutes").textContent = "0";
-          document.getElementById("seconds").textContent = "0";
+        // Function to update countdown
+        function updateCountdown() {
+            // Get current date and time
+            const now = new Date().getTime();
+            
+            // Find the time remaining between now and the countdown date
+            const timeRemaining = countdownDate - now;
+            
+            console.log("Time remaining (ms):", timeRemaining);
+            
+            // If the countdown is finished, display zeros
+            if (timeRemaining < 0) {
+                clearInterval(countdownTimer);
+                hoursElement.textContent = "0";
+                minutesElement.textContent = "0";
+                secondsElement.textContent = "0";
+                console.log("Countdown finished!");
+                return;
+            }
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            
+            // Calculate total hours (including days converted to hours)
+            const totalHours = hours + (days * 24);
+            
+            // Display the results with proper formatting (add leading zeros if needed)
+            hoursElement.textContent = totalHours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+            
+            console.log(`Countdown: ${totalHours}h ${minutes}m ${seconds}s`);
         }
-      }, 1000);
+        
+        // Run once immediately to avoid initial delay
+        updateCountdown();
+        
+        // Update the countdown every 1 second
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        
+    } else {
+        console.error("Countdown elements not found!");
+        console.log("Hours element:", hoursElement);
+        console.log("Minutes element:", minutesElement);
+        console.log("Seconds element:", secondsElement);
     }
-  });
+});
 
   //22. Gallery For Golf Day
   document.addEventListener('DOMContentLoaded', function() {
